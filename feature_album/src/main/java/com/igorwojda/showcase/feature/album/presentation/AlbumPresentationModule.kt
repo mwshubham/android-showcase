@@ -18,7 +18,7 @@ internal val presentationModule = Kodein.Module("${FEATURE_NAME}PresentationModu
 
     // AlbumList
     bind<AlbumListViewModel>() with scoped<Fragment>(AndroidLifecycleScope).singleton {
-        KotlinViewModelProvider.of(context) { AlbumListViewModel(instance()) }
+        KotlinViewModelProvider.of(context) { AlbumListViewModel(instance(), instance()) }
     }
 
     bind() from singleton { AlbumAdapter() }
